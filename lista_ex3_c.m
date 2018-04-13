@@ -10,6 +10,6 @@ x2 = sin(3);
 primeira = x.*delta3;
 segunda =  x2*delta;
 figure
-stem(primeira, uf, 'filled');
+stem(n, primeira, 'filled');
 figure
-stem(segunda, delta, 'filled');
+stem(n, segunda, 'filled');
