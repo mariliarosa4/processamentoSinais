@@ -2,7 +2,7 @@
 #degrau unitario u = (n-0)>=0;
 # x[n]*delta[n-3] = x[3]*delta[n]
 
-n=-10:10;
+n=-2:5;
 delta3=(n-3)==0;
 delta=(n-0)==0;
 x = sin(n);
