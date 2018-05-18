@@ -8,7 +8,7 @@ janela = 1000; #trocar pra 1000
 num_janelas = 2;
 total = janela * num_janelas;
 
-sinal = ecgAmostra(1:(janela*num_janelas)); #pegando uma parte do sinal de 10 mil amostras
+sinal = ecgAmostra(1:(total)); #pegando uma parte do sinal de 10 mil amostras
 
 pronta = xcorr(sinal);
 somatorio = zeros(size(sinal));
@@ -29,8 +29,6 @@ figure
 subplot(1,2,1);
 stem(pronta)
 title('Função xcorr');
-
-
 
 corr_flip = flip(autocorr);
 autocorr_final = vertcat(corr_flip,autocorr);
