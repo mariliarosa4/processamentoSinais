@@ -28,7 +28,7 @@ for (k=1:N)
  
  subplot(2, 2, 1);
  fftVerdadeira =  fft(x)
- stem(fftVerdadeira);title("fft octave");
+ stem(abs(fftVerdadeira));title("fft octave");
  
  subplot(2, 2, 2);
  stem(xk);title("Minha fft -x[k]");
