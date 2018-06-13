@@ -2,14 +2,20 @@
 clear all
 #TO-DO discretização do sinal
 
-x = [6  4  9  0  1  5  2  7];
-
-N = 8;
-xk=zeros(N);
+#x = [6  4  9  0  1  5  2  7];
+x=[2 2 4 4 6];
+#x=[0 1 2 3];
+N = size(x,2);
+xk=zeros(1,N);
+ck=zeros(1,N);
 k=1:N
 
 #j = sqrt (-1);
-kernel = exp((-j*2*pi)/N);
+
+kernel =-j; #//simula a simplificação feita para o calculo manual 
+
+#kernel = exp((-j*2*pi)/N);
+kk = 0:N-1
 for (k=1:N)
   soma = 0;
     for (n=1:N)
@@ -17,13 +23,20 @@ for (k=1:N)
           soma = soma + xn;
      endfor
      xk(k)=soma;
+      ck(k)=(soma * 2 )/N;
  endfor
  
- figure
+ subplot(2, 2, 1);
  fftVerdadeira =  fft(x)
- stem(fftVerdadeira);
+ stem(fftVerdadeira);title("fft octave");
  
- figure
- stem(xk);
+ subplot(2, 2, 2);
+ stem(xk);title("Minha fft -x[k]");
+ 
+fs = 30;
+subplot(2, 2, 3); 
+stem((kk* fs / N), abs(xk));ylabel('magnitude');title("Magnitude por frequencia");
 
- 
+subplot(2, 2, 4); 
+stem(ck);title("Minha fft - C[k]");
+
