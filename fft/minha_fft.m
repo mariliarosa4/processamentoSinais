@@ -35,7 +35,7 @@ for (k=1:N)
  
 fs = 30;
 subplot(2, 2, 3); 
-stem((kk* fs / N), abs(xk));ylabel('magnitude');title("Magnitude por frequencia");
+stem((kk* fs / N), angle(xk));ylabel('magnitude');title("Magnitude por frequencia");
 
 subplot(2, 2, 4); 
 stem(ck);title("Minha fft - C[k]");
