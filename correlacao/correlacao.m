@@ -28,5 +28,5 @@ for (i=1:total2)
 minha_corr_flip = flip(minha_corr);
 minha_final = vertcat(rot90(minha_corr_flip),rot90(minha_corr));
 
-  subplot(2,1,2);
+  subplot(2,1,2); 
   stem(minha_final);

@@ -12,9 +12,9 @@ k=1:N
 
 #j = sqrt (-1);
 
-kernel =-j; #//simula a simplificação feita para o calculo manual 
+#kernel =-j; #//simula a simplificação feita para o calculo manual 
 
-#kernel = exp((-j*2*pi)/N);
+kernel = exp((-j*2*pi)/N);
 kk = 0:N-1
 for (k=1:N)
   soma = 0;
@@ -31,12 +31,12 @@ for (k=1:N)
  stem(abs(fftVerdadeira));title("fft octave");
  
  subplot(2, 2, 2);
- stem(xk);title("Minha fft -x[k]");
+ stem(abs(xk));title("Minha fft -x[k]");
  
 fs = 30;
 subplot(2, 2, 3); 
-stem((kk* fs / N), angle(xk));ylabel('magnitude');title("Magnitude por frequencia");
+stem((kk* fs / N), angle(xk));ylabel('fase');title("fase por frequencia");
 
 subplot(2, 2, 4); 
-stem(ck);title("Minha fft - C[k]");
+stem(abs(ck));title("Minha fft - C[k]");
 
