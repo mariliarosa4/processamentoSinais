@@ -39,4 +39,5 @@ stem((kk* fs / N), angle(xk));ylabel('fase');title("fase por frequencia");
 
 subplot(2, 2, 4); 
 stem(abs(ck));title("Minha fft - C[k]");
-
+#E_tempo= sum(abs(x).^2)
+# Efreq = (sum((abs(fft(x))/(length(x))).^2))*N
