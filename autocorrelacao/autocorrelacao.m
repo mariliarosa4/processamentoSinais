@@ -33,7 +33,7 @@ stem(pronta)
 title('Função xcorr');
 
 corr_flip = flip(autocorr);
-autocorr_final = vertcat(corr_flip,autocorr);
+autocorr_final = vertcat(rot90(corr_flip),rot90(autocorr));
 
 subplot(1,2,2);
 stem(autocorr_final)

@@ -6,7 +6,7 @@ x = [2 3 3 2 1 1.5 1.5];
 corr_verdadeira = xcorr(y,x);
 
 subplot(2, 1, 1);
-stem(corr_verdadeira);
+stem(corr_verdadeira(1,1:9));
 
 total1 = size(y,2);
 total2 = size(x,2);
@@ -25,8 +25,8 @@ for (i=1:total2)
   minha_corr(i) = somatorio(i);
   endfor
   
-minha_corr_flip = flip(minha_corr);
-minha_final = vertcat(rot90(minha_corr_flip),rot90(minha_corr));
+minha_corr_flip = flip(minha_corr(1,1:total2-1));
+minha_final = vertcat(rot90(minha_corr),rot90(minha_corr_flip));
 
   subplot(2,1,2);
   stem(minha_final);
